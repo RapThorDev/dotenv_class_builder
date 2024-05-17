@@ -1,7 +1,7 @@
 name: dotenv_class_builder
 description: "A Flutter package for generating a Dart class from .env variables."
 
-version: 0.1.2
+version: 0.1.3
 homepage: "https://github.com/RapThorDev/dotenv_class_builder"
 
 environment:
