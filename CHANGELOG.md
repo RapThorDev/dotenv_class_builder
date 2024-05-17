@@ -1,3 +1,7 @@
+# 0.1.3
+
+* FIX: `README.md` example build.yaml file content `build_extensions`
+
 # 0.1.2
 
 * FIX: generate empty Environment or another classes
