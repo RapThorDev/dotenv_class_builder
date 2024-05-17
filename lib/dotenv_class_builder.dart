@@ -45,7 +45,7 @@ class EnvFileBuilder implements Builder {
         }
       }
 
-
+    variables.removeWhere((key, variable) => variable.isEmpty);
 
     outputBuffer.writeln("/// Please don't modify and remove this file.");
     outputBuffer.writeln("/// Run: \$ flutter pub run build_runner build --delete-conflicting-outputs");
@@ -88,7 +88,7 @@ class EnvFileBuilder implements Builder {
 
     try {
       // Kiírjuk a generált kódot a fájlba
-      File outputFile = File("lib/utils/environments.g.dart");
+      File outputFile = File("lib/util/environments.g.dart");
       if (await outputFile.exists()) {
         await outputFile.delete(recursive: true);
       }

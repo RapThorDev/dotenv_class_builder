@@ -8,7 +8,7 @@ builders:
     build_extensions:
       # Megadhatod, hogy milyen fájlnevekre legyen érvényes a generált kód kiterjesztése
       # Ez esetben a lib könyvtárban lévő .dart fájlokhoz fog .g.dart kiterjesztésű fájlokat generálni
-      ".env": [".g.dart"]
+      ".env": ["lib/util/environments.g.dart"]
 
 targets:
   $default:
@@ -19,11 +19,11 @@ targets:
         enabled: true
         generate_for:
           include:
-            - lib/**.env
+            - /**.env
         options:
-          #env_file_paths:
-          #  - lib/example.env
-          #  - another_example.env
+#          env_file_paths:
+#            - lib/example.env
+#            - another_example.env
           sources:
             # A lib könyvtárban lévő .dart fájlokhoz kapcsolódó entry pointok
             include: ["lib/**"]
