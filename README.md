@@ -17,7 +17,7 @@ builders:
     auto_apply: dependents
     build_to: source
     build_extensions:
-      ".env": [".g.dart"]
+      ".env": ["lib/util/environments.g.dart"]
 
 targets:
   $default:
