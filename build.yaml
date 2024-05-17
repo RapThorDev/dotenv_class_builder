@@ -1,0 +1,23 @@
+builders:
+  # A dotenv_class_builder target definiálása
+  dotenv_class_builder:
+    import: "package:dotenv_class_builder/dotenv_class_builder.dart"  # Az importált Builder fájl elérési útvonala
+    builder_factories: ["envFileBuilder"]  # A Builder Factory neve, amelyet regisztráltál a fájlban
+    build_extensions:
+      # Megadhatod, hogy milyen fájlnevekre legyen érvényes a generált kód kiterjesztése
+      # Ez esetben a lib könyvtárban lévő .dart fájlokhoz fog .g.dart kiterjesztésű fájlokat generálni
+      ".env": ["utils/environments.g.dart"]
+
+targets:
+  $default:
+    builders:
+      # dotenv_class_builder target konfigurálása
+      dotenv_class_builder:
+        # Az entry_points-nak meg kell adni a fájlokat, amelyekhez a Builder tartozik
+        enabled: true
+        options:
+          env_file_paths:
+            - lib/.env
+          sources:
+            # A lib könyvtárban lévő .dart fájlokhoz kapcsolódó entry pointok
+            include: ["lib/**"]
