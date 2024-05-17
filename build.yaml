@@ -21,9 +21,9 @@ targets:
           include:
             - lib/**.env
         options:
-          env_file_paths:
-            - lib/example.env
-            - another_example.env
+          #env_file_paths:
+          #  - lib/example.env
+          #  - another_example.env
           sources:
             # A lib könyvtárban lévő .dart fájlokhoz kapcsolódó entry pointok
             include: ["lib/**"]
